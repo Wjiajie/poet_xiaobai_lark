@@ -12,7 +12,7 @@ git clone git@github.com:Wjiajie/poet_xiaobai_lark.git
 
 ```
 
-* see [data_prepare](\datasets\README.md) to download datasets
+* see `datasets\README.md` to download datasets
 
 * run
 
