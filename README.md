@@ -1,6 +1,10 @@
 # poet_xiaobai_lark
 A Lark robot that pushes poetry at a fixed point every day
 
+### update time-line
+
+* update model from text-davinci-003 to GPT-3.5-turbo
+
 
 
 ### install

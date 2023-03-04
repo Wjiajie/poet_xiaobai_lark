@@ -21,17 +21,19 @@ item_counts = 0
 send_time = "15:04:59"
 
 def get_response(prompt):
-    model_engine = "text-davinci-003"
-    prompt = (f"{prompt}\n")
-    completions = openai.Completion.create(
-        engine=model_engine,
-        prompt=prompt,
-        max_tokens=1024,
-        n=1,
-        stop=None,
-        temperature=0.5,
+    model_engine = "GPT-3.5-turbo"
+    prompt = f"{prompt}\n"
+    completions = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+                {"role": "system", "content": "You are a talented poet."},
+                {"role": "user", "content": prompt},
+                {"role": "assistant", "content": "对诗词的解析中请不要照抄诗词本身."},
+                {"role": "user", "content": "请你鉴赏一下这首诗, 鉴赏内容以“这首诗”作为开始."}
+            ]
     )
-    message = completions.choices[0].text
+    print("completions : ", completions )
+    message = completions['choices'][0]['message']['content']
     return message
 
 def get_item_count():
